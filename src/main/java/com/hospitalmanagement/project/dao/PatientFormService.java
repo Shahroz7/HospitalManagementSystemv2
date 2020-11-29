@@ -7,9 +7,9 @@ import com.hospitalmanagement.project.model.PatientForm;
 
 public interface PatientFormService extends MongoRepository<PatientForm, String> {
 
-	void deleteByPhone(String phone);
+	void deleteByPatientId(String patientId);
 
-	PatientForm findByPhone(String phone);
+	PatientForm findByPatientId(String patientId);
 
 	PatientForm findByFullname(String fullname);
 

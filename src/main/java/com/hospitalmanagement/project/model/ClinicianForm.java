@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "ClinicianTable")
 public class ClinicianForm {
 	
+	private String clinicianId;
 	private String fullname;
 	private String age;
     private String gender;
@@ -71,16 +72,22 @@ public class ClinicianForm {
 		this.availability = availability;
 	}
 	
-	@Override
-	public String toString() {
-		return "ClinicianForm [fullname=" + fullname + ", age=" + age + ", gender=" + gender + ", email=" + email
-				+ ", phone=" + phone + ", specialization=" + specialization + ", experience=" + experience
-				+ ", address=" + address + ", availabilty=" + availability + "]";
+	public String getClinicianId() {
+		return clinicianId;
+	}
+	public void setClinicianId(String clinicianId) {
+		this.clinicianId = clinicianId;
 	}
 	
-	public ClinicianForm(String fullname, String age, String gender, String email, String phone, String specialization,
-			String experience, String address, String availability) {
+	
+	public ClinicianForm () {
+		
+	}
+	
+	public ClinicianForm(String clinicianId, String fullname, String age, String gender, String email, String phone,
+			String specialization, String experience, String address, String availability) {
 		super();
+		this.clinicianId = clinicianId;
 		this.fullname = fullname;
 		this.age = age;
 		this.gender = gender;
@@ -92,10 +99,12 @@ public class ClinicianForm {
 		this.availability = availability;
 	}
 	
-	public ClinicianForm () {
-		
+	@Override
+	public String toString() {
+		return "ClinicianForm [clinicianId=" + clinicianId + ", fullname=" + fullname + ", age=" + age + ", gender="
+				+ gender + ", email=" + email + ", phone=" + phone + ", specialization=" + specialization
+				+ ", experience=" + experience + ", address=" + address + ", availability=" + availability + "]";
 	}
-    
     
 
 }

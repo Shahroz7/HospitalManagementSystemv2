@@ -6,9 +6,9 @@ import com.hospitalmanagement.project.model.ClinicianForm;
 
 public interface ClinicianFormService extends MongoRepository<ClinicianForm, String>{
 
-	ClinicianForm findByPhone(String phone);
+	ClinicianForm findByClinicianId(String clinicianId);
 
-	void deleteByPhone(String phone);
+	void deleteByClinicianId(String clinicianId);
 	
 
 }

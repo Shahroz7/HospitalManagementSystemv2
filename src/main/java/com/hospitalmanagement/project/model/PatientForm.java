@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "PatientTable")
 public class PatientForm {
 
+	private String patientId;
 	private String fullname;
 	private String age;
 	private String gender;
@@ -24,6 +25,12 @@ public class PatientForm {
 	}
 	public void setAge(String age) {
 		this.age = age;
+	}
+	public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
 	}
 	public String getGender() {
 		return gender;
@@ -56,9 +63,10 @@ public class PatientForm {
 		this.appointment = appointment;
 	}
 	
-	public PatientForm(String fullname, String age, String gender, String email, String phone, String address,
-			String appointment) {
+	public PatientForm(String patientId, String fullname, String age, String gender, String email, String phone,
+			String address, String appointment) {
 		super();
+		this.patientId = patientId;
 		this.fullname = fullname;
 		this.age = age;
 		this.gender = gender;
@@ -67,16 +75,15 @@ public class PatientForm {
 		this.address = address;
 		this.appointment = appointment;
 	}
-	
 	public PatientForm() {
 		
 	}
 	
 	@Override
 	public String toString() {
-		return "PatientForm [fullname=" + fullname + ", age=" + age + ", gender=" + gender + ", email=" + email
-				+ ", phone=" + phone + ", address=" + address + ", appointment=" + appointment + "]";
+		return "PatientForm [patientId=" + patientId + ", fullname=" + fullname + ", age=" + age + ", gender=" + gender
+				+ ", email=" + email + ", phone=" + phone + ", address=" + address + ", appointment=" + appointment
+				+ "]";
 	}
 	
-
 }
